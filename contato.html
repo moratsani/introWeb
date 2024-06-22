@@ -1,46 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css">
     <title>Contato</title>
 </head>
+
 <body>
-    <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>
-            <a href="contato.html">Contato</a>
-        </li>
-    </ul>
-
-    <h1>Entre em contato comigo</h1>
-
-    <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome">
-        <br>
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email">
-        <br>
-        <br>
-        <label for="assunto">Assunto:</label>
-        <textarea name="assunto" id="assunto" cols="60" rows="5"></textarea>
-        <br>
-        <br>
-        <button>Enviar</button>
-
-        <h2>Endereço:</h2>
-
-        <p>Area 51</p>
-        <p>Nevada - EUA</p>
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101627.05808999788!2d-115.80400715000002!3d37.25137145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80b81baaba3e8c81%3A0x970427e38e6237ae!2zw4FyZWEgNTEsIE5WLCBFVUE!5e0!3m2!1spt-BR!2sbr!4v1718376932629!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="index.html" class="link">Home</a>
+                </li>
+                <li>
+                    <a href="contato.html" class="link">Contato</a>
+                </li>
+                <li>
+                    <a href="curiosidades.html" class="link">Curiosidades</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
 
-    </form>
-    
+    <main>
+        <section>
+            <article class="conteudoCon">
+                <h1>Entre em contato comigo</h1>
+
+                <div class="formulario">
+                    <form onsubmit="enviar(event)">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" onkeyup="validaNome()">
+                        <div id="txtNome"></div>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" onkeyup="validaEmail()">
+                        <div id="txtEmail"></div>
+                        <br>
+                        <div class="assuntoclass">
+                            <label for="assunto">Assunto:</label>
+                            <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"></textarea>
+                            <div id="txtAssunto"></div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="campoBotao">
+                            <button type="submit" class="botaoEnviar">Enviar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="endereco">
+                    <h2>Endereço:</h2>
+
+                    <p>Area 51</p>
+                    <p>Nevada - EUA</p>
+                </div>
+
+
+                <iframe id="mapa"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101627.05808999788!2d-115.80400715000002!3d37.25137145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80b81baaba3e8c81%3A0x970427e38e6237ae!2zw4FyZWEgNTEsIE5WLCBFVUE!5e0!3m2!1spt-BR!2sbr!4v1718376932629!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" onmousemove="mapaZoom()" onmouseout="mapaNormal()"></iframe>
+
+            </article>
+        </section>
+    </main>
+
+    <script src="/assets/js/script.js"></script>
 </body>
+
 </html>
